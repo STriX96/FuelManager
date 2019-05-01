@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "719807796631",
+    "firebase_url": "https://fuelmanager-d46a4.firebaseio.com",
+    "project_id": "fuelmanager-d46a4",
+    "storage_bucket": "fuelmanager-d46a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719807796631:android:01ca8c3644ce0f46",
+        "android_client_info": {
+          "package_name": "com.example.fuelmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "719807796631-h31gi77na4pb0mq23l7la71j3cu3ptc9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fuelmanager",
+            "certificate_hash": "4b7dd8e66975ac0b825b064a0beddc7dbfcb9ca5"
+          }
+        },
+        {
+          "client_id": "719807796631-o2gc6deu9gb8l389c6a0lt91sbg7m5ho.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoioleZ2unR8RCgXGxoJQkvzbclrU_saE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "719807796631-o2gc6deu9gb8l389c6a0lt91sbg7m5ho.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
