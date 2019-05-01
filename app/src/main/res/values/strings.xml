@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">FuelManager</string>
+    <string name="menuButton1">Tankolások</string>
+    <string name="menuButton2">Statisztikák</string>
+    <string name="title">Fuel Manager</string>
+    <string name="title_activity_fuel_up">Tankolások</string>
+    <string name="new_fuel_up_item">Új jármű hozzáadása</string>
+    <string name="ok">Kész</string>
+    <string name="cancel">Mégse</string>
+    <string name="statTitle">Összesítő statisztika</string>
+    <string name="title_activity_stat">Statisztikák</string>
+    <string name="regnum">Rendszám:</string>
+    <string name="regnum_hint">AAA123</string>
+    <string name="fuel_up_date">Tankolás dátuma:</string>
+    <string name="fuel_up_date_hint">2018-01-01</string>
+    <string name="travelled_km">Megtett Km:</string>
+    <string name="travelled_km_hint">000.0</string>
+    <string name="amount_of_liter">Tankolt mennyiség(l):</string>
+    <string name="amount_of_liter_hint">00.00</string>
+    <string name="price">Ár/liter:</string>
+    <string name="price_hint">000.0</string>
+    <string name="title_activity_main">Fuel Manager</string>
+    <string name="main_navigation_drawer_open">Open navigation drawer</string>
+    <string name="main_navigation_drawer_close">Close navigation drawer</string>
+    <string name="main_nav_header_title">FuelManager</string>
+    <string name="main_nav_header_subtitle">Made by: Márki Bence</string>
+    <string name="main_nav_header_desc">Navigation header</string>
+    <string name="main_action_settings">Settings</string>
+    <string name="nav_logout">Kijelentkezés</string>
+    <string name="nav_fillup">Tankolások</string>
+    <string name="nav_stat">Statisztikák</string>
+
 </resources>
