@@ -29,5 +29,6 @@
     <string name="nav_logout">Kijelentkezés</string>
     <string name="nav_fillup">Tankolások</string>
     <string name="nav_stat">Statisztikák</string>
+    <string name="title_activity_fill_ups">FillUpsActivity</string>
 
 </resources>

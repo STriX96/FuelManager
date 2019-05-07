@@ -11,8 +11,9 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_main.*
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +31,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         navView.setNavigationItemSelectedListener(this)
+
+        btn_fillup.setOnClickListener{
+            startActivity(Intent(this, FillUpsActivity::class.java))
+        }
     }
 
     override fun onBackPressed() {
@@ -48,10 +53,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 startActivity(Intent(this, LoginRegisterActivity::class.java))
                 finish()
             }
-            /*R.id.nav_fillups -> {
-                startActivity(Intent(this, FillUpsActivity::calss.java))
+            R.id.nav_fillups -> {
+                startActivity(Intent(this, FillUpsActivity::class.java))
             }
-            R.id.nav_stats -> {
+            /*R.id.nav_stats -> {
                 startActivity(Intent(this, StatisticsActivity::calss.java))
             }*/
         }

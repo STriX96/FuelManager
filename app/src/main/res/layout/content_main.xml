@@ -19,7 +19,7 @@
             android:textStyle="bold" />
 
     <Button
-            android:id="@+id/btn_tankolas"
+            android:id="@+id/btn_fillup"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="50dp"

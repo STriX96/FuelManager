@@ -10,6 +10,13 @@
             android:roundIcon="@mipmap/fuel_bg_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".CreateFillUpActivity">
+        </activity>
+        <activity
+                android:name=".FillUpsActivity"
+                android:label="@string/title_activity_fill_ups"
+                android:theme="@style/AppTheme">
+        </activity>
         <activity
                 android:name=".MainActivity"
                 android:label="@string/title_activity_main"
