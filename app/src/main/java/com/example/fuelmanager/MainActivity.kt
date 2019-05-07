@@ -35,6 +35,9 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         btn_fillup.setOnClickListener{
             startActivity(Intent(this, FillUpsActivity::class.java))
         }
+        btn_stats.setOnClickListener{
+            startActivity(Intent(this, StatisticsActivity::class.java))
+        }
     }
 
     override fun onBackPressed() {

@@ -20,6 +20,12 @@ class LoginRegisterActivity : BaseActivity() {
 
         btnRegister.setOnClickListener { registerClick() }
         btnLogin.setOnClickListener { loginClick() }
+
+        if(firebaseAuth.currentUser != null){
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun validateForm() = etEmail.validateNonEmpty() && etPassword.validateNonEmpty()
