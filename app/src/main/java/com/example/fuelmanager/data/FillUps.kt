@@ -1,15 +1,18 @@
 package com.example.fuelmanager.data
 
-import java.util.*
-
 class FillUps (
-    var uid: String? = null,
-    var regNum: String? = null,
-    var traveledKm: Double? = 0.0,
-    var amountOfLiter: Double? = 0.0,
-    var price: Double? = 0.0,
-    var sum: Double? = 0.0,
-    var average: Double? = 0.0,
-    var date: String? = null,
-    var imageURL: String? = null
+    var uid: String,
+    var regNum: String,
+    var traveledKm: Double,
+    var amountOfLiter: Double,
+    var price: Double,
+    var sum: Double,
+    var average: Double,
+    var date: String,
+    var imageURL: String,
+    var imageName: String,
+    var thiskey: String
 )
+{
+    constructor(): this("","",0.0,0.0,0.0,0.0,0.0,"","","","")
+}

@@ -16,6 +16,7 @@ import com.bumptech.glide.Glide
 import com.example.fuelmanager.R
 import com.example.fuelmanager.data.FillUps
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.fuel_up_item.view.*
 import java.text.SimpleDateFormat
 import java.time.format.DateTimeFormatter
@@ -63,7 +64,10 @@ class FillUpsAdapter (private val context: Context): RecyclerView.Adapter<FillUp
 
         viewHolder.remove_btn.setOnClickListener {
             deleteFillUp(tmpFillUp)
-            //FirebaseDatabase.getInstance().getReference("fillups").c
+            FirebaseDatabase.getInstance().getReference("fillups").child(tmpFillUp.thiskey).removeValue()
+            try {
+                FirebaseStorage.getInstance().getReferenceFromUrl(tmpFillUp.imageURL).delete()
+            } catch (e: Exception){}
         }
 
         setAnimation(viewHolder.itemView, position)

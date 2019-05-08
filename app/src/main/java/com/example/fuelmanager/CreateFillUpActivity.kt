@@ -39,7 +39,7 @@ class CreateFillUpActivity : BaseActivity(), DatePickerDialogFragment.DateListen
         }
 
         if (imgReceipt.visibility != View.VISIBLE) {
-            uploadFillUp()
+            uploadFillUp("","")
         } else {
             try {
                 uploadFillUpWithImage()
@@ -62,7 +62,7 @@ class CreateFillUpActivity : BaseActivity(), DatePickerDialogFragment.DateListen
         etTravelledKm.validateNonEmpty()
 
 
-    private fun uploadFillUp(imageURL: String? = null) {
+    private fun uploadFillUp(imageURL: String, newImageName: String) {
         val key = FirebaseDatabase.getInstance().reference.child("fillups").push().key ?: return
 
         val sum = etAmountOfLiter.text.toString().toDouble() * etPrice.text.toString().toDouble()
@@ -77,7 +77,9 @@ class CreateFillUpActivity : BaseActivity(), DatePickerDialogFragment.DateListen
             sum,
             average,
             etDate.text.toString(),
-            imageURL
+            imageURL,
+            newImageName,
+            key
         )
 
         FirebaseDatabase.getInstance().reference
@@ -112,7 +114,7 @@ class CreateFillUpActivity : BaseActivity(), DatePickerDialogFragment.DateListen
                 newImageRef.downloadUrl
             }
             .addOnSuccessListener { downloadUri ->
-                uploadFillUp(downloadUri.toString())
+                uploadFillUp(downloadUri.toString(), newImageName)
             }
     }
 

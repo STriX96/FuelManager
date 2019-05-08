@@ -40,8 +40,10 @@ class StatisticsActivity : AppCompatActivity() {
                 var mSum = 0.0
                 var mAverage = 0.0
 
+                var map: Map< String,Any>
+
                 for (ds in datasnapshot.children){
-                    val map: Map< String, Any > = ds.value as Map<String, Any>
+                    map = ds.value as Map<String, Any>
                     val traveledKm = map["traveledKm"]
                     val fuel = map["amountOfLiter"]
                     val sum = map["sum"]
@@ -67,16 +69,16 @@ class StatisticsActivity : AppCompatActivity() {
                     mFuelUps++
                     totalFuelUpsValue.text = mFuelUps.toString()
 
-                    //val dateValue = date.toString()
-                    //val formatter: DateFormat = SimpleDateFormat("YYYY.MM.DD", Locale.UK)
-                    //val dateToDate : Date = formatter.parse(dateValue)
-
-                    //graph1
-                    //points = arrayOfNulls<DataPoint>(mFuelUps)
-                    //val data = DataPoint(dateToDate, sumValue)
-                    //points[mFuelUps-1] = data
-
                 }
+
+                //val dateValue = date.toString()
+                //val formatter: DateFormat = SimpleDateFormat("YYYY.MM.DD", Locale.UK)
+                //val dateToDate : Date = formatter.parse(dateValue)
+
+                //graph1
+                //points = arrayOfNulls<DataPoint>(mFuelUps)
+                //val data = DataPoint(dateToDate, sumValue)
+                //points[mFuelUps-1] = data
 
                 //series = LineGraphSeries()
             }

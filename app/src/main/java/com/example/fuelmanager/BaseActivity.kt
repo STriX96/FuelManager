@@ -10,17 +10,17 @@ abstract class BaseActivity : AppCompatActivity() {
 
     private var progressDialog: ProgressDialog? = null
 
-    private val firebaseUser: FirebaseUser?
-        get() = FirebaseAuth.getInstance().currentUser
+    private val firebaseUser: FirebaseUser
+        get() = FirebaseAuth.getInstance().currentUser!!
 
-    protected val uid: String?
-        get() = firebaseUser?.uid
+    protected val uid: String
+        get() = firebaseUser.uid
 
-    protected val userName: String?
-        get() = firebaseUser?.displayName
+    protected val userName: String
+        get() = firebaseUser.displayName!!
 
-    protected val userEmail: String?
-        get() = firebaseUser?.email
+    protected val userEmail: String
+        get() = firebaseUser.email!!
 
     fun showProgressDialog() {
         if (progressDialog != null) {
