@@ -10,18 +10,25 @@
             android:roundIcon="@mipmap/fuel_bg_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".StatisticsActivity">
+        <activity
+                android:name=".StatisticsActivity"
+                android:screenOrientation="portrait"
+                android:label="@string/title_activity_stat">
         </activity>
-        <activity android:name=".CreateFillUpActivity">
+        <activity
+                android:name=".CreateFillUpActivity"
+                android:screenOrientation="portrait"
+                android:label="@string/title_activity_create_fill_up">
         </activity>
         <activity
                 android:name=".FillUpsActivity"
                 android:label="@string/title_activity_fill_ups"
+                android:screenOrientation="portrait"
                 android:theme="@style/AppTheme">
         </activity>
         <activity
                 android:name=".MainActivity"
-                android:label="@string/title_activity_main"
+                android:screenOrientation="portrait"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity

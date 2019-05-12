@@ -62,11 +62,16 @@ class DatePickerDialogFragment : DialogFragment() {
         val dateString = StringBuilder()
 
         dateString.append(calSelectedDate.get(Calendar.YEAR))
-        dateString.append(".")
+        dateString.append("-")
+        if((calSelectedDate.get(Calendar.MONTH) + 1) <= 9){
+            dateString.append("0")
+        }
         dateString.append(calSelectedDate.get(Calendar.MONTH) + 1)
-        dateString.append(".")
+        dateString.append("-")
+        if(calSelectedDate.get(Calendar.DAY_OF_MONTH) <= 9){
+            dateString.append("0")
+        }
         dateString.append(calSelectedDate.get(Calendar.DAY_OF_MONTH))
-        dateString.append(".")
 
         return dateString.toString()
     }

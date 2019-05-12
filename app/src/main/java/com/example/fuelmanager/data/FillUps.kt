@@ -10,9 +10,8 @@ class FillUps (
     var average: Double,
     var date: String,
     var imageURL: String,
-    var imageName: String,
     var thiskey: String
 )
 {
-    constructor(): this("","",0.0,0.0,0.0,0.0,0.0,"","","","")
+    constructor(): this("","",0.0,0.0,0.0,0.0,0.0,"","","")
 }

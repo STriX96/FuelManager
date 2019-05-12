@@ -1,34 +1,55 @@
 <resources>
-    <string name="app_name">FuelManager</string>
+    <string name="app_name" translatable="false">FuelManager</string>
     <string name="menuButton1">Tankolások</string>
     <string name="menuButton2">Statisztikák</string>
-    <string name="title">Fuel Manager</string>
-    <string name="title_activity_fuel_up">Tankolások</string>
-    <string name="new_fuel_up_item">Új jármű hozzáadása</string>
+    <string name="title" translatable="false">Fuel Manager</string>
     <string name="ok">Kész</string>
     <string name="cancel">Mégse</string>
     <string name="statTitle">Összesítő statisztika</string>
     <string name="title_activity_stat">Statisztikák</string>
     <string name="regnum">Rendszám:</string>
-    <string name="regnum_hint">AAA123</string>
+    <string name="regnum_hint" translatable="false">AAA123</string>
     <string name="fuel_up_date">Tankolás dátuma:</string>
-    <string name="fuel_up_date_hint">2018-01-01</string>
+    <string name="fuel_up_date_hint" translatable="false">2018–01–01</string>
     <string name="travelled_km">Megtett Km:</string>
-    <string name="travelled_km_hint">000.0</string>
+    <string name="travelled_km_hint" translatable="false">000.0</string>
     <string name="amount_of_liter">Tankolt mennyiség(l):</string>
-    <string name="amount_of_liter_hint">00.00</string>
+    <string name="amount_of_liter_hint" translatable="false">00.00</string>
     <string name="price">Ár/liter:</string>
-    <string name="price_hint">000.0</string>
-    <string name="title_activity_main">Fuel Manager</string>
-    <string name="main_navigation_drawer_open">Open navigation drawer</string>
-    <string name="main_navigation_drawer_close">Close navigation drawer</string>
-    <string name="main_nav_header_title">FuelManager</string>
-    <string name="main_nav_header_subtitle">Made by: Márki Bence</string>
-    <string name="main_nav_header_desc">Navigation header</string>
-    <string name="main_action_settings">Settings</string>
+    <string name="price_hint" translatable="false">000.0</string>
+    <string name="main_navigation_drawer_open">Navigation drawer kinyitása</string>
+    <string name="main_navigation_drawer_close">Navigation drawer bezárása</string>
+    <string name="main_nav_header_title" translatable="false">FuelManager</string>
+    <string name="main_nav_header_subtitle">Készítette: Márki Bence</string>
+    <string name="main_nav_header_desc">Navigációs fejléc</string>
+    <string name="main_action_settings">Beállítások</string>
     <string name="nav_logout">Kijelentkezés</string>
     <string name="nav_fillup">Tankolások</string>
     <string name="nav_stat">Statisztikák</string>
-    <string name="title_activity_fill_ups">FillUpsActivity</string>
+    <string name="title_activity_fill_ups">Tankolások</string>
+    <string name="title_activity_create_fill_up">Új tankolás</string>
+    <string name="receipt_upload">Nyugta feltöltése</string>
+    <string name="pick_date">Válassz dátumot</string>
+    <string name="login_email">Email</string>
+    <string name="password">Jelszó</string>
+    <string name="login">Bejelentkezés</string>
+    <string name="register">Regisztráció</string>
+    <string name="stat_total_km">Összes megtett km</string>
+    <string name="stat_total_fuel">Összes tankolt üzemanyag</string>
+    <string name="stat_total_fuel_ups">Összes tankolás</string>
+    <string name="stat_total_sum">Összes költség</string>
+    <string name="stat_average">Átlagfogyasztás</string>
+    <string name="stat_graph1_title">Legutóbbi tankolások</string>
+    <string name="stat_graph2_title">Átlagfogyasztás</string>
+    <string name="delete_fillUp">Tankolás törlése</string>
+    <string name="delete_fillUp_message">Biztosan törölni szeretnéd?</string>
+    <string name="yes">Igen</string>
+    <string name="validate_required">Kötelező</string>
+    <string name="sign_in_loading">Bejelentkezés…</string>
+    <string name="fill_up_created">Tankolás hozzáadása sikeres</string>
+    <string name="fill_up_deleted">Tankolás törölve</string>
+    <string name="register_success">Sikeres regisztráció</string>
+    <string name="sign_out">Kijelentkezés</string>
+    <string name="sign_out_message">Biztosan ki szeretnél jelentkezni?</string>
 
 </resources>

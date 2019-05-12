@@ -29,7 +29,7 @@ abstract class BaseActivity : AppCompatActivity() {
 
         progressDialog = ProgressDialog(this).apply {
             setCancelable(false)
-            setMessage("Loading...")
+            setMessage(getString(R.string.sign_in_loading))
             show()
         }
     }

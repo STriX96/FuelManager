@@ -2,13 +2,13 @@ package com.example.fuelmanager
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.view.GravityCompat
-import android.support.v7.app.ActionBarDrawerToggle
-import android.view.MenuItem
-import android.support.v4.widget.DrawerLayout
 import android.support.design.widget.NavigationView
-import android.support.v7.app.AppCompatActivity
+import android.support.v4.view.GravityCompat
+import android.support.v4.widget.DrawerLayout
+import android.support.v7.app.ActionBarDrawerToggle
+import android.support.v7.app.AlertDialog
 import android.support.v7.widget.Toolbar
+import android.view.MenuItem
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -41,11 +41,24 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     }
 
     override fun onBackPressed() {
-        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
+        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
+            drawer_layout.closeDrawer(GravityCompat.START)
+        }else{
+            val builder = AlertDialog.Builder(this@MainActivity)
+            builder.setTitle(getString(R.string.sign_out))
+            builder.setMessage(getString(R.string.sign_out_message))
+            builder.setPositiveButton(getString(R.string.yes)){dialog, which ->
+                FirebaseAuth.getInstance().signOut()
+                startActivity(Intent(this, LoginRegisterActivity::class.java))
+                dialog.dismiss()
+                finish()
+            }
+
+            builder.setNegativeButton(getString(R.string.cancel)){dialog, which ->
+                dialog.dismiss()
+            }
+            val dialog: AlertDialog = builder.create()
+            dialog.show()
         }
     }
 
@@ -57,11 +70,13 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                 finish()
             }
             R.id.nav_fillups -> {
-                startActivity(Intent(this, FillUpsActivity::class.java))
+                val fillUpIntent = Intent(this, FillUpsActivity::class.java)
+                startActivity(fillUpIntent)
             }
-            /*R.id.nav_stats -> {
-                startActivity(Intent(this, StatisticsActivity::calss.java))
-            }*/
+            R.id.nav_stats -> {
+                val statIntent = Intent(this, StatisticsActivity::class.java)
+                startActivity(statIntent)
+            }
         }
 
         drawer_layout.closeDrawer(GravityCompat.START)

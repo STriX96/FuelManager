@@ -4,7 +4,7 @@
 
     <LinearLayout
                   android:layout_width="match_parent"
-                  android:layout_height="match_parent"
+                  android:layout_height="wrap_content"
                   android:orientation="vertical">
 
         <TextView
@@ -43,7 +43,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:textColor="#000"
-                        android:text="Összes megtett km"
+                        android:text="@string/stat_total_km"
                         android:textSize="16sp" />
 
                 <LinearLayout
@@ -75,7 +75,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:textColor="#000"
-                        android:text="Összes tankolt üzemanyag"
+                        android:text="@string/stat_total_fuel"
                         android:textSize="16sp" />
 
                 <LinearLayout
@@ -107,7 +107,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:textColor="#000"
-                        android:text="Összes tankolás"
+                        android:text="@string/stat_total_fuel_ups"
                         android:textSize="16sp" />
 
                 <LinearLayout
@@ -139,7 +139,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:textColor="#000"
-                        android:text="Összes költség"
+                        android:text="@string/stat_total_sum"
                         android:textSize="16sp" />
 
                 <LinearLayout
@@ -171,7 +171,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:textColor="#000"
-                        android:text="Átlagfogyasztás"
+                        android:text="@string/stat_average"
                         android:textSize="16sp" />
 
                 <LinearLayout
@@ -204,10 +204,18 @@
                 android:paddingRight="16dp"
                 android:paddingTop="8dp">
 
-            <com.jjoe64.graphview.GraphView
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/stat_graph1_title"
+                    android:textSize="20sp"
+                    android:textColor="#000"
+                    android:gravity="center"/>
+
+            <com.github.mikephil.charting.charts.LineChart
                     android:id="@+id/graph1"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp" />
+                    android:layout_height="270dp" />
 
         </LinearLayout>
 
@@ -222,7 +230,15 @@
                 android:paddingRight="16dp"
                 android:paddingTop="8dp">
 
-            <com.jjoe64.graphview.GraphView
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/stat_graph2_title"
+                    android:textSize="20sp"
+                    android:textColor="#000"
+                    android:gravity="center"/>
+
+            <com.github.mikephil.charting.charts.LineChart
                     android:id="@+id/graph2"
                     android:layout_width="match_parent"
                     android:layout_height="200dp" />

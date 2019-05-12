@@ -7,9 +7,10 @@ import android.util.Log
 import android.widget.Toast
 import com.example.fuelmanager.adapter.FillUpsAdapter
 import com.example.fuelmanager.data.FillUps
-import com.google.firebase.database.*
-import com.google.firebase.storage.FirebaseStorage
-
+import com.google.firebase.database.ChildEventListener
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_fill_ups.*
 import kotlinx.android.synthetic.main.content_fill_ups.*
 
@@ -50,7 +51,7 @@ class FillUpsActivity : BaseActivity(){
                 override fun onChildRemoved(dataSnapshot: DataSnapshot) {
                     val key = dataSnapshot.key!!
                     FirebaseDatabase.getInstance().getReference("fillups").child(key).removeValue().addOnSuccessListener {
-                        Toast.makeText(applicationContext, "Tankolás törölve", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext, getString(R.string.fill_up_deleted), Toast.LENGTH_SHORT).show()
                     }
 
                     val imgRef = FirebaseDatabase.getInstance().getReference("fillups").child(key).child("imageURL")

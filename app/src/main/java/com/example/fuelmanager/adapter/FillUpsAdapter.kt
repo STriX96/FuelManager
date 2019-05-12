@@ -2,8 +2,6 @@ package com.example.fuelmanager.adapter
 
 import android.app.AlertDialog
 import android.content.Context
-import android.os.Build
-import android.support.annotation.RequiresApi
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -18,8 +16,6 @@ import com.example.fuelmanager.data.FillUps
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.fuel_up_item.view.*
-import java.text.SimpleDateFormat
-import java.time.format.DateTimeFormatter
 
 class FillUpsAdapter (private val context: Context): RecyclerView.Adapter<FillUpsAdapter.ViewHolder>(){
 
@@ -28,7 +24,7 @@ class FillUpsAdapter (private val context: Context): RecyclerView.Adapter<FillUp
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvRegNum: TextView = itemView.tvRegNum
-        val remove_btn: ImageButton = itemView.remove_btn
+        val btnRemove: ImageButton = itemView.btnRemove
         val tvAmountOfLiter: TextView = itemView.tvAmountOfLiter
         val tvTravelledKm: TextView = itemView.tvTravelledKm
         val tvAverage: TextView = itemView.tvAverage
@@ -55,19 +51,38 @@ class FillUpsAdapter (private val context: Context): RecyclerView.Adapter<FillUp
         viewHolder.tvSum.text = String.format("%.0f", tmpFillUp.sum) + " Ft"
         viewHolder.tvDate.text = tmpFillUp.date
 
-        if (tmpFillUp.imageURL.isNullOrBlank()) {
+        if (tmpFillUp.imageURL.isBlank()) {
             viewHolder.imgReceipt.visibility = View.GONE
         } else {
             Glide.with(context).load(tmpFillUp.imageURL).into(viewHolder.imgReceipt)
             viewHolder.imgReceipt.visibility = View.VISIBLE
         }
 
-        viewHolder.remove_btn.setOnClickListener {
-            deleteFillUp(tmpFillUp)
-            FirebaseDatabase.getInstance().getReference("fillups").child(tmpFillUp.thiskey).removeValue()
-            try {
-                FirebaseStorage.getInstance().getReferenceFromUrl(tmpFillUp.imageURL).delete()
-            } catch (e: Exception){}
+        viewHolder.btnRemove.setOnClickListener {
+
+            val builder = AlertDialog.Builder(it.context)
+
+            builder.setTitle(context.getString(R.string.delete_fillUp))
+
+            builder.setMessage(context.getString(R.string.delete_fillUp_message))
+
+            builder.setPositiveButton(context.getString(R.string.yes)){dialog, which ->
+                deleteFillUp(tmpFillUp)
+                FirebaseDatabase.getInstance().getReference("fillups").child(tmpFillUp.thiskey).removeValue()
+                try {
+                    FirebaseStorage.getInstance().getReferenceFromUrl(tmpFillUp.imageURL).delete()
+                } catch (e: Exception){}
+
+                dialog.dismiss()
+            }
+
+            builder.setNegativeButton(context.getString(R.string.cancel)){dialog, which ->
+                dialog.dismiss()
+            }
+
+            val dialog: AlertDialog = builder.create()
+
+            dialog.show()
         }
 
         setAnimation(viewHolder.itemView, position)

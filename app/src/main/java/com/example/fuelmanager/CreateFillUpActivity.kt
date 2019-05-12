@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
@@ -39,7 +38,7 @@ class CreateFillUpActivity : BaseActivity(), DatePickerDialogFragment.DateListen
         }
 
         if (imgReceipt.visibility != View.VISIBLE) {
-            uploadFillUp("","")
+            uploadFillUp("")
         } else {
             try {
                 uploadFillUpWithImage()
@@ -62,7 +61,7 @@ class CreateFillUpActivity : BaseActivity(), DatePickerDialogFragment.DateListen
         etTravelledKm.validateNonEmpty()
 
 
-    private fun uploadFillUp(imageURL: String, newImageName: String) {
+    private fun uploadFillUp(imageURL: String) {
         val key = FirebaseDatabase.getInstance().reference.child("fillups").push().key ?: return
 
         val sum = etAmountOfLiter.text.toString().toDouble() * etPrice.text.toString().toDouble()
@@ -78,7 +77,6 @@ class CreateFillUpActivity : BaseActivity(), DatePickerDialogFragment.DateListen
             average,
             etDate.text.toString(),
             imageURL,
-            newImageName,
             key
         )
 
@@ -87,7 +85,7 @@ class CreateFillUpActivity : BaseActivity(), DatePickerDialogFragment.DateListen
             .child(key)
             .setValue(newFillUp)
             .addOnCompleteListener {
-                toast("Fill Up created")
+                toast(getString(R.string.fill_up_created))
                 finish()
             }
     }
@@ -114,7 +112,7 @@ class CreateFillUpActivity : BaseActivity(), DatePickerDialogFragment.DateListen
                 newImageRef.downloadUrl
             }
             .addOnSuccessListener { downloadUri ->
-                uploadFillUp(downloadUri.toString(), newImageName)
+                uploadFillUp(downloadUri.toString())
             }
     }
 

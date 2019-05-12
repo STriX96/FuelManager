@@ -48,7 +48,21 @@ class LoginRegisterActivity : BaseActivity() {
                     .build()
                 firebaseUser.updateProfile(profileChangeRequest)
 
-                toast("Registration successful")
+                toast(getString(R.string.register_success))
+
+                firebaseAuth
+                    .signInWithEmailAndPassword(etEmail.text.toString(), etPassword.text.toString())
+                    .addOnSuccessListener {
+                        hideProgressDialog()
+
+                        startActivity(Intent(this@LoginRegisterActivity, MainActivity::class.java))
+                        finish()
+                    }
+                    .addOnFailureListener { exception ->
+                        hideProgressDialog()
+
+                        toast(exception.localizedMessage)
+                    }
             }
             .addOnFailureListener { exception ->
                 hideProgressDialog()
